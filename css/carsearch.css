@@ -1,0 +1,274 @@
+.btn{
+  padding: 9px 25px;
+  background-color: aqua;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  margin-top: 15px;
+  margin-right: 20px;
+}
+.btn:hover{
+  background-color:  rgb(54, 110, 110) ;
+}
+
+/* Style the form */
+#regForm {
+   
+    margin: 10px 10px;
+    padding: 40px;
+    width: 80%;
+    height: 80%;
+    min-width: 300px;
+    color: rgb(255, 255, 255);
+  }
+  
+  /* Style the input fields */
+  input {
+    padding: 10px;
+    width: 100%;
+    font-size: 17px;
+    font-family: Raleway;
+    border: 1px solid #aaaaaa;
+  }
+  
+  /* Mark input boxes that gets an error on validation: */
+  input.invalid {
+    background-color: #ffdddd;
+  }
+  
+  /* Hide all steps by default: */
+  .tab {
+    display: none;
+  }
+
+  
+  /* Make circles that indicate the steps of the form: */
+  .step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none; 
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+  }
+  
+  /* Mark the active step: */
+  .step.active {
+    opacity: 1;
+  }
+  
+  /* Mark the steps that are finished and valid: */
+  .step.finish {
+    background-color: #04AA6D;
+  }
+
+
+  .date{
+      display: flex;
+      justify-content: space-around;
+      margin: 20px;
+  }
+
+
+  .total{
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+.display{
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Personal details starts*/
+
+.personal-h1{
+  text-align: center;
+  margin-bottom: 40px;
+}
+.personal-txt{
+  width: 93%;
+  padding: 20px;
+}
+.personal{
+  margin-bottom: 30px;
+  border-radius: 10px;
+  
+}
+
+/* Personal details ends*/
+
+
+
+/* Rent details starts*/
+.date-input{
+  width: 100%;
+  height: 20px;
+  
+}
+#list,#listcity{
+margin-left: 20px;
+  width: 500px;
+}
+.img{
+  height: 150px;
+  width: 200px;
+  margin-left: 5px;
+}
+
+.rent-h1{
+  text-align: center;
+  margin-top: -15px;
+margin-bottom: 20px;
+}
+.rent-car{
+    width: 740px;
+    height: 340px;
+    border: 1px solid;
+   
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    justify-content:space-around;
+    border-radius: 40px;
+    margin-left: 50px;
+    
+}
+
+.selectcity{
+  margin-bottom: 20px;
+  margin-left: 68px;
+}
+.selectcar{
+  margin-bottom: 0px;
+  margin-left: 68px;
+}
+
+.display{
+  display: flex;
+   
+}
+
+.img-detail{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+
+
+/* Rent details ends*/
+
+
+
+
+/* Confirmation starts*/
+.confirm-h1{
+  text-align: center;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+.confirm-tab{
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+ 
+}
+.confirm-detail{
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+/* Confirmation ends */
+
+  *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background : url(../images/back-2.jpg);
+    background-size: 1120px 650px;
+    background-repeat: no-repeat;
+    
+}
+
+/* payment*/
+  .container{
+    width: 740px;
+    height: 370px;
+    border: 1px solid;
+    
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    justify-content:space-around;
+    border-radius: 40px;
+    margin-left: 50px;
+}
+
+.container h1{
+    text-align: center;
+}
+
+.first-row{
+     display: flex;
+}
+
+.owner{
+    width: 100%;
+    margin-right: 40px;
+}
+
+.input-field{
+    border: 1px solid #999;
+}
+
+.input-field input{
+    width: 100%;
+    border:none;
+    outline: none;
+    padding: 10px;
+}
+
+.selection{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selection select{
+    padding: 10px 20px;
+}
+
+a{
+    background-color: blueviolet;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 18px;
+    transition: 0.5s;
+}
+
+a:hover{
+    background-color: dodgerblue;
+}
+
+.cards img{
+    width: 100px;
+}

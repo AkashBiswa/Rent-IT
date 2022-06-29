@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Database</title>
+    <link rel="stylesheet" href="css/adminsubscribe.css">
+
+</head>
+
+<body>
+
+    <!--- Home Page Starts -->
+
+    <div class="main">
+        <div class="navbar">
+            <h2 class="logo">RentIT</h2>
+
+            <a href="adminpage.html">
+                <button class="sign-in">Back</button>
+            </a>
+        </div>
+
+
+<div class="heading">
+    <h1>Customer Details</h1>
+</div>
+
+        <div class="table">
+            <table id="customers" class="table1">
+                <tr>
+                    <th>CID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>City</th>
+                    <th>Date</th>
+                    <th>Car</th>
+                    <th>No of Days</th>
+                    <th>Total Cost</th>
+
+                    <!--<th>Delete Member</th>-->
+                </tr>
+                <tbody id="tbody1" class="td">
+                    <!--- <td>1</td>
+                    <td>John</td>
+                    <td>Cena</td>
+                    <td>test@test.com</td>
+
+                    <td class="center-button">
+                        <button class="button">Delete</button>
+                    </td>-->
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    </div>
+
+
+
+</body>
+
+
+
+
+<script type="module">
+
+    var elem = "";
+    var stdNo = 0;
+    var tbody = document.getElementById('tbody1');
+
+    function AddItemToTabel(fname, email,phone,city,date,car,nodays,totalcost) {
+        let trow = document.createElement("tr");
+
+        let td1 = document.createElement('td');
+        let td2 = document.createElement('td');
+        let td3 = document.createElement('td');
+        let td4 = document.createElement('td');
+        let td5 = document.createElement('td');
+        let td6 = document.createElement('td');
+        let td7 = document.createElement('td');
+        let td8 = document.createElement('td');
+        let td9 = document.createElement('td');
+
+        td1.innerHTML = ++stdNo;
+        td2.innerHTML = fname;
+        td3.innerHTML = email;
+        td4.innerHTML = phone;
+        td5.innerHTML = city;
+        td6.innerHTML = date;
+        td7.innerHTML = car;
+        td8.innerHTML = nodays;
+        td9.innerHTML = totalcost;
+
+        trow.appendChild(td1);
+        trow.appendChild(td2);
+        trow.appendChild(td3);
+        trow.appendChild(td4);
+        trow.appendChild(td5);
+        trow.appendChild(td6);
+        trow.appendChild(td7);
+        trow.appendChild(td8);
+        trow.appendChild(td9);
+
+        tbody.appendChild(trow);
+    }
+
+    function AddAllItemsToTable(TheStudent) {
+        stdNo = 0;
+        tbody.innerHTML = "";
+        TheStudent.forEach(element => {
+
+            if (elem.length == 0) {
+                elem += element.email;
+            } else {
+                elem += "," + element.email;
+            }
+
+
+            AddItemToTabel(element.username, element.Email, element.Phone
+                           ,element.City,element.Date,element.Car
+                           ,element.No_of_Days,element.Total_Cost);
+        });
+    }
+
+/* Get All data*/
+
+
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-app.js";
+  
+  const firebaseConfig = {
+    apiKey: "AIzaSyCsCf6b76xcxFqw19Nf4LzKXDHrFLA4hOo",
+    authDomain: "rentit-b59c8.firebaseapp.com",
+    databaseURL: "https://rentit-b59c8-default-rtdb.firebaseio.com",
+    projectId: "rentit-b59c8",
+    storageBucket: "rentit-b59c8.appspot.com",
+    messagingSenderId: "1045450479306",
+    appId: "1:1045450479306:web:1722378dda18e2a05e4633"
+  };
+
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    import { getDatabase, ref, child, onValue, get } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-database.js";
+    const db = getDatabase();
+
+    //getting all data
+    function GetAllDataOnce() {
+
+
+
+        const dbRef = ref(db);
+
+        //firebase.database().ref(db).once('users', function(snapshot) {
+
+
+        get(child(dbRef, "users")).then((snapshot) => {
+
+            //console.log(snapshot);
+            var students = [];
+
+            snapshot.forEach(childSnapshot => {
+                students.push(childSnapshot.val());
+            });
+            AddAllItemsToTable(students);
+        });
+    }
+    window.onload = GetAllDataOnce;
+
+
+
+
+    //  Adding script for sending mail
+    /*
+    
+        const form = document.querySelector(".contact-form");
+        form.addEventListener("submit", e => {
+            e.preventDefault();
+            let name = document.querySelector(".name").value;
+            let subject = document.querySelector(".subject").value;
+    
+    
+    
+            document.querySelector(".contact-form").reset();
+    
+            sendEmail(name, subject);
+        })
+        function sendEmail(name, subject) {
+            Email.send({
+    
+                Host: "smtp.elasticemail.com",
+                Username: "coffeecafe448@gmail.com",
+                Password: "B111B523BD866D61897FB074A0594D89768B",
+                To: elem,
+                From: "coffeecafe448@gmail.com",
+                Subject: subject,
+                Body: name //`Name: ${name} <br> Email: ${email} <br>`,
+            }).then((success) => {
+    
+                alert("Message sent successfully!");
+            }).catch((error) => {
+    
+                alert("error sending message");
+            })
+        }
+    */
+
+</script>
+
+
+
+
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+
+</html>
