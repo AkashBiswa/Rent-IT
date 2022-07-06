@@ -5,9 +5,11 @@ RentIT is a web-based enterprise that assists tourists in renting automobiles at
 <img width="1280" alt="index" src="https://user-images.githubusercontent.com/75787511/177488863-955243ed-9c7e-4538-943e-4f41a796fe9e.png">
 
 **Selecting Car**
+
 <img width="1280" alt="selecting car" src="https://user-images.githubusercontent.com/75787511/177489521-8e0017ca-dfd7-4e1b-a656-a1c969b8d304.png">
 
-**Bill**
+**Bill Confirmation**
+
 <img width="1280" alt="Bill" src="https://user-images.githubusercontent.com/75787511/177489591-9a7fae23-e6b8-4662-b20d-6f6ad48548a6.png">
 
 **Payment**
@@ -21,3 +23,15 @@ RentIT is a web-based enterprise that assists tourists in renting automobiles at
 **Customer Database**
 
 <img width="1280" alt="database" src="https://user-images.githubusercontent.com/75787511/177489826-676bf6b4-cee8-4517-b124-322aee6223e7.png">
+
+### ---------INSTRUCTIONS FOR RUNNING THE PROJECT------------
+
+
+1. Extract HTML, CSS and JS folder in a single folder.
+2. Open the folder using VS Code and run it.
+3. To access the backend use Firebase.
+4. Open Firebase and create a project.
+5. Create authentication and real time database.
+6. Replace the adrdress code with the address code in th JS file.
+7. Run it again.
+
